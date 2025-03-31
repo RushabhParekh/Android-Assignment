@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ExpenseAdapter(private val expenses: List<ExpenseData>) :
+class ExpenseAdapter(private val expenses: List<Expense>) :
     RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
 
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val titleText: TextView = itemView.findViewById(R.id.textExpenseTitle)
+        val nameText: TextView = itemView.findViewById(R.id.textExpenseTitle)
         val amountText: TextView = itemView.findViewById(R.id.textExpenseAmount)
     }
 
@@ -21,9 +21,9 @@ class ExpenseAdapter(private val expenses: List<ExpenseData>) :
     }
 
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
-        val item = expenses[position]
-        holder.titleText.text = item.name
-        holder.amountText.text = "$%.2f".format(item.amount)
+        val expense = expenses[position]
+        holder.nameText.text = expense.name
+        holder.amountText.text = "$${expense.amount}"
     }
 
     override fun getItemCount(): Int = expenses.size

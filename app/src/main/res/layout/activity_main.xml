@@ -4,34 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="20dp">
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
     <EditText
-        android:id="@+id/editExpenseName"
+        android:id="@+id/inputName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Expense Name"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="10dp"/>
 
     <EditText
-        android:id="@+id/editExpenseAmount"
+        android:id="@+id/inputAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Amount"
+        android:hint="Expense Amount"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="10dp"/>
 
     <Button
-        android:id="@+id/btnAddExpense"
+        android:id="@+id/buttonAddExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Expense"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/buttonMoneyTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Money Tips"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerExpenseList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+    <FrameLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
 </LinearLayout>
